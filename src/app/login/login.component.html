@@ -1,0 +1,63 @@
+<div class="container d-flex flex-column vh-100" id="login">
+  <div class="m-5">
+    <h1 class="pt-5 text-center">{{ title }}</h1>
+    <form [formGroup]="formLogin" (ngSubmit)="enviarFormulario()">
+      <div class="form-group">
+        <label class="form-label mt-2">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter username"
+          formControlName="username"
+          #txtUsername
+          [ngClass]="formLogin.get('username')?.errors?.['required']  || formLogin.get('username')?.errors?.['username']? 'is-invalid':'is-valid'"
+        />
+        <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+        <p
+          *ngIf="formLogin.get('username')?.errors?.['required']"
+          class="invalid-feedback"
+        >
+          Username(email) input is required
+        </p>
+        <p
+          *ngIf="formLogin.get('username')?.errors?.['username']"
+          class="invalid-feedback"
+        >
+          It must contain '@' and '.com'
+        </p>
+      </div>
+      <div class="form-group">
+        <label class="form-label mt-2">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Enter Password"
+          formControlName="password"
+          #txtPassword
+          [ngClass]="formLogin.get('password')?.errors?.['required']  || formLogin.get('password')?.errors?.['minlength']? 'is-invalid':'is-valid'"
+        />
+        <p
+          *ngIf="formLogin.get('password')?.errors?.['required']"
+          class="invalid-feedback"
+        >
+          Password input is required
+        </p>
+        <p
+          *ngIf="formLogin.get('password')?.errors?.['minlength']"
+          class="invalid-feedback"
+        >
+          Password invalid
+        </p>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary mt-4"
+        [disabled]="formLogin.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
