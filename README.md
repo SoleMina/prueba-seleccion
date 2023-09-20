@@ -10,6 +10,7 @@ This project is made with angular.
 - Reactive Forms
 - Responsive
 - Guards
+- Lazy-loading
 
 ## Github page:
 
