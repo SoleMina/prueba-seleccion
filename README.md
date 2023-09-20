@@ -14,4 +14,4 @@ This project is made with angular.
 
 ## Github page:
 
-url:
+- project URL: [Link]().
