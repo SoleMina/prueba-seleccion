@@ -12,7 +12,11 @@ export class LoginComponent {
   title: string = 'Login';
 
   formLogin: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.email,
+    ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(3),

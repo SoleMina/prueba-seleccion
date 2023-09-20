@@ -10,11 +10,8 @@
           placeholder="Enter username"
           formControlName="username"
           #txtUsername
-          [ngClass]="formLogin.get('username')?.errors?.['required']  || formLogin.get('username')?.errors?.['username']? 'is-invalid':'is-valid'"
+          [ngClass]="formLogin.get('username')?.errors?.['required']  || formLogin.get('username')?.errors?.['minlength'] || formLogin.get('username')?.errors?.['email']? 'is-invalid':'is-valid'"
         />
-        <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
         <p
           *ngIf="formLogin.get('username')?.errors?.['required']"
           class="invalid-feedback"
@@ -22,7 +19,7 @@
           Username(email) input is required
         </p>
         <p
-          *ngIf="formLogin.get('username')?.errors?.['username']"
+          *ngIf="formLogin.get('username')?.errors?.['email']"
           class="invalid-feedback"
         >
           It must contain '@' and '.com'
