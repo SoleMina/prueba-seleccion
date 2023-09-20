@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "http://159.65.96.86:8080/services/auth/:match*"
+    }
+  ],
   "headers": [
     {
       "source": "api/(.*)",
