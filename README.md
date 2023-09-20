@@ -12,6 +12,6 @@ This project is made with angular.
 - Guards
 - Lazy-loading
 
-## Github page:
+## Screenshot
 
-- project URL: [Link]().
+![Example screenshot](./src/assets/img/login.png)
