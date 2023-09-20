@@ -27,13 +27,11 @@ export class LoginComponent {
 
     this.authService.login(username, password).subscribe({
       next: (response) => {
-        // Handle the response and redirect to the dashboard if successful.
         console.log('Autenticación exitosa', response);
         this.router.navigate(['/dashboard']);
-        // Redirect to the dashboard here.
       },
       error: (error) => {
-        // Handle authentication errors.
+        alert('Correo o password inválido');
         console.error('Error de autenticación', error);
       },
     });
