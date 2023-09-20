@@ -1,7 +1,7 @@
 <div class="container d-flex flex-column vh-100" id="login">
   <div class="m-5">
     <h1 class="pt-5 text-center">{{ title }}</h1>
-    <form [formGroup]="formLogin" (ngSubmit)="enviarFormulario()">
+    <form [formGroup]="formLogin" (ngSubmit)="sendForm()">
       <div class="form-group">
         <label class="form-label mt-2">Username (Email): </label>
         <input

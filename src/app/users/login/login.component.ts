@@ -21,7 +21,7 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  enviarFormulario() {
+  sendForm() {
     console.log(this.formLogin);
     const { username, password } = this.formLogin.value;
 
